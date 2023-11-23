@@ -25,7 +25,7 @@ pipeline{
             steps {
                 sh '''
                     oc project me-greetings
-                    oc start-build greeting-service --follo --wait
+                    oc start-build greeting-service --follow --wait
                 '''
             }
         }
