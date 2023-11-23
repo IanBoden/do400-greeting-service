@@ -21,6 +21,13 @@ pipeline{
             }
         }
 
-        // Add the "Deploy" stage here
+        stage("Deploy"){
+            steps {
+                sh '''
+                    oc project me-greetings
+                    oc start-build greeting-service --follo --wait
+                '''
+            }
+        }
     }
 }
